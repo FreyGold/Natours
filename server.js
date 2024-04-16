@@ -14,7 +14,6 @@ const DB = process.env.DATABASE.replace(
   '<password>',
   process.env.DATABASE_PASSWORD,
 );
-console.log('before mongoose');
 mongoose
   .connect(DB, {
     useNewUrlParser: true,

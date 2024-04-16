@@ -2,6 +2,7 @@ const express = require('express');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorControllers');
 const app = express();
+const compression = require('compression');
 const morgan = require('morgan');
 const tourRouter = require('./routes/tourRoutes');
 const usersRouter = require('./routes/userRoutes');
@@ -46,6 +47,7 @@ app.use(
   }),
 );
 
+app.use(compression());
 /////// Functions
 
 ///// Tours Funcs

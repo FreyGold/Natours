@@ -21,9 +21,8 @@ mongoose
     useFindAndModify: false,
   })
   .then(() => console.log(`DB connected succesfully`));
-const port = 3000;
 
-const server = app.listen(port, () => {
+const server = app.listen(process.env.PORT, () => {
   console.log('app running');
 });
 // process.on('unhandledRejection', (err) => {

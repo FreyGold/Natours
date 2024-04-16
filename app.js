@@ -13,6 +13,7 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xssProtect = require('xss-clean');
 const hpp = require('hpp');
+const cors = require('cors');
 const path = require('path');
 //
 //
@@ -20,6 +21,7 @@ const path = require('path');
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 /////// Global Middlewares
+app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));

@@ -31,8 +31,6 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     cancel_url: `${req.protocol}://${req.get('host')}/tour`,
   });
 
-  // 3) send it to client
-
   res.status(200).json({
     status: 'success',
     session,
